@@ -1,5 +1,6 @@
 ZeroNum
 ========
+WORK IN PROGRESS
 ZeroNum is a tool designed to enumerate target machines comprehensively by scanning all ports, identifying open services, and performing detailed follow-up checks and interactions. Once data on open ports such as FTP, RPC, and SMB are collected, the tool offers advanced capabilities to detect anonymous or default login options, connect where possible, and further enumerate these services.
 
 Project Motivation:
