@@ -1,9 +1,8 @@
 import argparse
 import sys
-from portscan import *
-from ftp import check_anonymous_login, download_ftp_content
-from smb import check_null_session, download_smb_content
-
+from services.portscan import port_scan, parse_services_file, is_valid_ipv4
+from services.ftp import check_anonymous_login, download_ftp_content
+from services.smb import check_null_session, download_smb_content
 def banner():
     print(r"""
     ============================
@@ -25,7 +24,7 @@ if __name__ == "__main__":
         print(f"Error: '{args.target}' is not a valid IPv4 address.")
         sys.exit(1)
         
-    ports_list, ports_services = parse_services_file('services.txt')
+    ports_list, ports_services = parse_services_file('services/services.txt')
     scan_results = port_scan(args.target, ports_services)
     
     # Check for FTP (port 21)
